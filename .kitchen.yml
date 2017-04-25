@@ -18,6 +18,7 @@ platforms:
         docker:
           #version: '1.10.3'
           version: '1.12.3'
+          members: [ 'vagrant', 'user1', 'user2' ]
           distribution: "ubuntu-xenial"
 
   - name: ubuntu-14.04
@@ -30,9 +31,21 @@ platforms:
         docker:
           #version: '1.10.3'
           version: '1.12.3'
+          members: [ 'vagrant', 'user1', 'user2' ]
           distribution: "ubuntu-trusty"
 
 suites:
   - name: default
     run_list:
+      - recipe[localsetup]
       - recipe[docker-install::docker-install]
+    attributes:
+      docker_install:
+        docker:
+          images:
+            - name: 'hello-world'
+              tag: 'latest'
+            - name: 'python'
+              tag: '3.6.1'
+            - name: 'python'
+              tag: '2.7.13'

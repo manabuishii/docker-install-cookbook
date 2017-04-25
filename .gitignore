@@ -81,6 +81,7 @@ cookbooks/
 
 # test kitchen test result
 result/junit
+result/*.xml
 
 #
 .kitchen

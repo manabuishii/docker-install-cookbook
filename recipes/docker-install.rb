@@ -28,3 +28,17 @@ group 'docker' do
   append true
   only_if { node[:docker_install][:docker][:setup_group] }
 end
+
+docker_service 'default' do
+  action [:create, :start]
+end
+
+
+node[:docker_install][:docker][:images].each do |dockerimage|
+
+docker_image "#{dockerimage[:name]}" do
+  tag dockerimage[:tag]
+  action :pull
+end
+
+end
