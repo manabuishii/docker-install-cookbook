@@ -4,7 +4,7 @@ maintainer_email 'Manabu ISHII'
 license          'MIT'
 description      'Install docker'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.2.0'
+version          '1.0.0'
 
 depends 'apt', '= 2.7.0'
-depends 'docker', '= 2.13.10'
+depends 'docker', '= 2.16.0'

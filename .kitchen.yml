@@ -16,8 +16,7 @@ platforms:
     attributes:
       docker_install:
         docker:
-          #version: '1.10.3'
-          version: '1.12.3'
+          version: '17.09.0'
           members: [ 'vagrant', 'user1', 'user2' ]
           distribution: "ubuntu-xenial"
 
@@ -29,8 +28,7 @@ platforms:
     attributes:
       docker_install:
         docker:
-          #version: '1.10.3'
-          version: '1.12.3'
+          version: '17.09.0'
           members: [ 'vagrant', 'user1', 'user2' ]
           distribution: "ubuntu-trusty"
 
