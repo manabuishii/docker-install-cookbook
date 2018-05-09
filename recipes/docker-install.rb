@@ -1,13 +1,3 @@
-apt_repository "add-docker-repository" do
-  uri "https://apt.dockerproject.org/repo"
-  distribution node[:docker_install][:docker][:distribution]
-  components ["main"]
-  keyserver 'hkp://p80.pool.sks-keyservers.net:80'
-  key "58118E89F3A912897C070ADBF76221572C52609D"
-  action :add
-  notifies :run, "bash[apt-get update]"
-end
-
 bash "apt-get update" do
   code   "apt-get update"
   action :nothing
