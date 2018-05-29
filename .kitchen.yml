@@ -8,6 +8,18 @@ provisioner:
 
 
 platforms:
+  - name: ubuntu-18.04
+    driver:
+      vagrantfile_erb: Vagrantfile.erb
+      synced_folders:
+        - ['./result', '/tmp/result']
+    attributes:
+      docker_install:
+        docker:
+          version: '17.09.0'
+          members: [ 'vagrant', 'user1', 'user2' ]
+          distribution: "ubuntu-bionic"
+
   - name: ubuntu-16.04
     driver:
       vagrantfile_erb: Vagrantfile.erb
